@@ -44,4 +44,4 @@ SQL
 Получение всех регулярных уведомлений для отправки
 
     SELECT * FROM `sm_dates` WHERE `date` = '0000-00-00' AND `last_send` <= ADDDATE(NOW(), INTERVAL -1 DAY);
-    
+

@@ -19,7 +19,7 @@ SELECT
   `sm_dates`.`last_send`       AS `last_send`,
   `sm_dates`.`exclude_weekday` AS `exclude_weekday`,
   `sm_dates`.`message`         AS `message`,
-  MAKE_SET(~(`sm_dates`.`exclude_weekday`),'Вс','Пн','Вт','Ср','Чт','Пт','Сб') AS `weekdays`,
+  MAKE_SET(`sm_dates`.`exclude_weekday`,'Вс','Пн','Вт','Ср','Чт','Пт','Сб') AS `exclude_weekdays`,
   IF((`sm_dates`.`date` = '0000-00-00'),(7 - BIT_COUNT(`sm_dates`.`exclude_weekday`)),'-') AS `per_week`
 FROM `sm_dates`;
 
